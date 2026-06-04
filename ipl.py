@@ -7,7 +7,7 @@ from datetime import datetime
 st.set_page_config(page_title="Indian Premier League", page_icon = "ipl_logo.png",
                    layout="wide")
 
-PAGE_OPTIONS = ["Overview","Team Analysis","Venue","Data Assistant","Developer's Choice"]
+PAGE_OPTIONS = ["Overview","Team Analysis","Venue","Data Assistant"]
 if "page" not in st.query_params:
     st.query_params["page"] = "Overview"
 current_page = st.query_params["page"]
@@ -25,8 +25,8 @@ df = load_data()
 with st.sidebar:
 
     st.title("Indian Premier League")
-    selected = option_menu("",["Overview","Team Analysis","Venue","Data Assistant","Developer's Choice"],
-                            icons = ["clipboard-data","people-fill","geo-alt-fill","robot","person-fill"],
+    selected = option_menu("",["Overview","Team Analysis","Venue","Data Assistant"],
+                            icons = ["clipboard-data","people-fill","geo-alt-fill","robot"],
                             default_index = default_index)
     st.query_params["page"] = selected
 
